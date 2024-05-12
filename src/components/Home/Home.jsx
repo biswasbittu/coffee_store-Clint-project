@@ -14,7 +14,7 @@ const Home = () => {
               nostalgia back!! Your companion of every moment!!! Enjoy the
               beautiful moments and make them memorable.
             </p>
-            <button className="bg-[#E3B577] px-2 py-1 mt-6 text-black">
+            <button className="bg-[#E3B577] px-2 py-1 mt-6 text-black font-semibold">
               Learn More
             </button>
           </div>
@@ -55,6 +55,77 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* product Section */}
+
+      <section className="mt-12">
+        <div className="text-center ">
+          <p>--- Sip & Savor ---</p>
+          <h1 className="text-4xl font-semibold text-[#331a15]">
+            Our Popular Products
+          </h1>
+          <button className="bg-[#E3B577] py-1 px-4 mt-4 border-2 border-[#331A15]">
+            Add Coffee
+          </button>
+        </div>
+      </section>
+
+      {/* img Gallary section */}
+      <section className="mt-12">
+        <div className="text-center my-3 ">
+          <p>Follow Us Now</p>
+          <h1 className="text-4xl font-semibold text-[#331a15]">
+            Follow on Instagram
+          </h1>
+        </div>
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
+            <img
+              src="../../../public/cups/Rectangle 9.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 10.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 11.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 12.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 13.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 14.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+
+            <img
+              src="../../../public/cups/Rectangle 15.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+            <img
+              src="../../../public/cups/Rectangle 16.png"
+              alt="Image 1"
+              className="w-full h-auto"
+            />
+
+            {/* Add more images as needed */}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
