@@ -1,4 +1,15 @@
+import { Link, useLoaderData } from "react-router-dom";
+import CoffeeCard from "../CoffeeCard/CoffeeCard";
+
+
+
 const Home = () => {
+
+
+const coffees = useLoaderData()
+
+console.log(coffees);
+
   return (
     <div>
       {/* cover imge Section */}
@@ -65,8 +76,15 @@ const Home = () => {
             Our Popular Products
           </h1>
           <button className="bg-[#E3B577] py-1 px-4 mt-4 border-2 border-[#331A15]">
-            Add Coffee
+            <Link to="/addcoffee">Add Coffee</Link>
           </button>
+          <div className="container mx-auto my-8">
+            <div className="grid grid-cols-2 gap-4 ">
+              {coffees.map((coffee) => (
+                <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
