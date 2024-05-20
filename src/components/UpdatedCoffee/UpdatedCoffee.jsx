@@ -20,7 +20,7 @@ const UpdatedCoffee = () => {
        const category = form.category.value;
        const details = form.details.value;
        const photo = form.photo.value;
-       const newCoffee = {
+       const updatedCoffee = {
          name,
          quentity,
          supplier,
@@ -31,6 +31,26 @@ const UpdatedCoffee = () => {
        };
 
        // send data to db
+        fetch(`http://localhost:5000/coffee/${_id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedCoffee),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            if (data.modifiedCount>0) {
+              Swal.fire({
+                title: "Success",
+                text: "Coffee Updated Succefully",
+                icon: "success",
+                confirmButtonText: "Ok-Boss",
+              });
+            }
+          });
+   
       
        form.reset();
      };
@@ -57,7 +77,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="name"
-                    value={name}
+                    defaultValue={name}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -68,7 +88,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="quentity"
-                    value={quentity}
+                    defaultValue={quentity}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -79,7 +99,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="supplier"
-                    value={supplier}
+                    defaultValue={supplier}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -90,7 +110,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="test"
-                    value={test}
+                    defaultValue={test}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -101,7 +121,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="category"
-                    value={category}
+                    defaultValue={category}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -112,7 +132,7 @@ const UpdatedCoffee = () => {
                   <input
                     type="text"
                     name="details"
-                    value={details}
+                    defaultValue={details}
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                   />
                 </div>
@@ -124,7 +144,7 @@ const UpdatedCoffee = () => {
                 <input
                   type="url"
                   name="photo"
-                  value={photo}
+                  defaultValue={photo}
                   className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 />
               </div>
